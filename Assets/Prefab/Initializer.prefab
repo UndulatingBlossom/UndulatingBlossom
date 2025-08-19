@@ -47,11 +47,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioManagerPrefab: {fileID: 6588661091160323398, guid: 731f566b3144f8fcfbf75954fd324085, type: 3}
-  menuManagerPrefab: {fileID: 9203855399348233410, guid: 6b73f26838014f44fb58deae934b5a53, type: 3}
   playerManagerPrefab: {fileID: 9035541431607366272, guid: 0ed47fdb2263dc3298b15b092f7fe01e, type: 3}
+  localeManagerPrefab: {fileID: 6588661091160323398, guid: e7cb20ce40f827ec192cc7587472f539, type: 3}
+  menuManagerPrefab: {fileID: 9203855399348233410, guid: 6b73f26838014f44fb58deae934b5a53, type: 3}
   felixSpawnPoint: {fileID: 27993085968622162}
   annaSpawnPoint: {fileID: 613258297673767260}
-  targetGroup: {fileID: 0}
 --- !u!1 &3910110167590942003
 GameObject:
   m_ObjectHideFlags: 0

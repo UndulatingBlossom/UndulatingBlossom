@@ -66,7 +66,8 @@ public class InputPrompt : MonoBehaviour {
     private string CreateButtonPrompt(ControllerType controllerType) {
         int[] indices = useShared ? actionIndices : actions[controllerType];
         string[] prompts = indices.Select(actionIndex => GetSpriteString(controllerType, actionIndex)).ToArray();
-        return $"<size={textScale}%>{prefix} {string.Join(separator, prompts)} {suffix}</size>";
+
+        return $"<size={textScale}%>{LocaleManager.instance.Localize(prefix)} {string.Join(separator, prompts)} {LocaleManager.instance.Localize(suffix)}</size>";
     }
 
     private string GetSpriteString(ControllerType controllerType, int actionIndex) {

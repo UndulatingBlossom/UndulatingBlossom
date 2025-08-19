@@ -4,8 +4,9 @@ public class SampleSceneInit: MonoBehaviour {
 
     // Assign in Inspector
     public GameObject audioManagerPrefab;
-    public GameObject menuManagerPrefab;
     public GameObject playerManagerPrefab;
+    public GameObject localeManagerPrefab;
+    public GameObject menuManagerPrefab;
     public Transform felixSpawnPoint;
     public Transform annaSpawnPoint;
     //
@@ -16,6 +17,9 @@ public class SampleSceneInit: MonoBehaviour {
         // Debug.Log("Sample Scene Initializer: Start");
 
         // Ensure that all manager singletons are available
+        if (LocaleManager.instance == null) {
+            Instantiate(localeManagerPrefab);
+        }
         if (AudioManager.instance == null) {
             Instantiate(audioManagerPrefab);
         }

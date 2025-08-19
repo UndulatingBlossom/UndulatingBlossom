@@ -21,6 +21,9 @@ public class AssistModeMenu : MonoBehaviour {
     private bool isInfiniteDashAnna;
     private bool isInvincibilityAnna;
     private float _gameSpeed;
+    private string Localize(string term) => LocaleManager.instance.Localize(term);
+
+
 
     public void Start() {
         selectedButton.Select();
@@ -29,17 +32,21 @@ public class AssistModeMenu : MonoBehaviour {
         isInfiniteDashAnna = PlayerManager.instance.CanInfiniteDash(CharacterName.Anna);
         isInvincibilityAnna = PlayerManager.instance.IsInvincible(CharacterName.Anna);
 
-        infiniteDashFelix.text = isInfiniteDashFelix ? "On" : "Off";
-        invincibiliyFelix.text = isInvincibilityFelix ? "On" : "Off";
-        infiniteDashAnna.text = isInfiniteDashAnna ? "On" : "Off";
-        invincibiliyAnna.text = isInvincibilityAnna ? "On" : "Off";
+        infiniteDashFelix.text = isInfiniteDashFelix ? Localize("On") : Localize("Off");
+        invincibiliyFelix.text = isInvincibilityFelix ? Localize("On") : Localize("Off");
+        infiniteDashAnna.text = isInfiniteDashAnna ? Localize("On") : Localize("Off");
+        invincibiliyAnna.text = isInvincibilityAnna ? Localize("On") : Localize("Off");
 
         _gameSpeed = MenuManager.instance.gameSpeed;
+        LocaleManager.instance.SetMenuLocalization(this);
+        gameSpeedText.text = $"{Localize("Game Speed")}: {_gameSpeed * 100:F0}%";
     }
 
     public void OnEnable() {
         selectedButton.Select();
         selectedButton.GetComponentInChildren<TextMeshProUGUI>().color = selectedColor;
+        LocaleManager.instance.SetMenuLocalization(this);
+        gameSpeedText.text = $"{Localize("Game Speed")}: {_gameSpeed * 100:F0}%";
     }
 
     public void OnDisable() {
@@ -48,29 +55,30 @@ public class AssistModeMenu : MonoBehaviour {
         invincibiliyFelix.color = normalColor;
         infiniteDashAnna.color = normalColor;
         invincibiliyAnna.color = normalColor;
+        LocaleManager.instance.ResetMenuLocalization();
     }
 
     public void ToggleInvincibilityFelix() {
         isInvincibilityFelix = !isInvincibilityFelix;
-        invincibiliyFelix.text = isInvincibilityFelix ? "On" : "Off";
+        invincibiliyFelix.text = isInvincibilityFelix ? Localize("On") : Localize("Off");
         PlayerManager.instance.SetInvincible(CharacterName.Felix, isInvincibilityFelix);
     }
 
     public void ToggleInvincibilityAnna() {
         isInvincibilityAnna = !isInvincibilityAnna;
-        invincibiliyAnna.text = isInvincibilityAnna ? "On" : "Off";
+        invincibiliyAnna.text = isInvincibilityAnna ? Localize("On") : Localize("Off");
         PlayerManager.instance.SetInvincible(CharacterName.Anna, isInvincibilityAnna);
     }
 
-        public void ToggleInfiniteDashFelix() {
+    public void ToggleInfiniteDashFelix() {
         isInfiniteDashFelix = !isInfiniteDashFelix;
-        infiniteDashFelix.text = isInfiniteDashFelix ? "On" : "Off";
+        infiniteDashFelix.text = isInfiniteDashFelix ? Localize("On") : Localize("Off");
         PlayerManager.instance.SetInfiniteDash(CharacterName.Felix, isInfiniteDashFelix);
     }
 
     public void ToggleInfiniteDashAnna() {
         isInfiniteDashAnna = !isInfiniteDashAnna;
-        infiniteDashAnna.text = isInfiniteDashAnna ? "On" : "Off";
+        infiniteDashAnna.text = isInfiniteDashAnna ? Localize("On") : Localize("Off");
         PlayerManager.instance.SetInfiniteDash(CharacterName.Anna, isInfiniteDashAnna);
     }
 
@@ -80,7 +88,7 @@ public class AssistModeMenu : MonoBehaviour {
             _gameSpeed = 0.5f;
         }
         MenuManager.instance.gameSpeed = _gameSpeed;
-        gameSpeedText.text = $"Game Speed: {_gameSpeed * 100:F0}%";
+        gameSpeedText.text = $"{Localize("Game Speed")}: {_gameSpeed * 100:F0}%";
     }
 
     public void Back() {

@@ -24,6 +24,7 @@ public class CharacterSelectionMenu : MonoBehaviour {
 
     private bool allPlayersJoined;
     private bool isSwapped = false;
+    private string Localize(string term) => LocaleManager.instance.Localize(term);
 
     public void Start() {
         allPlayersJoined = false;
@@ -33,14 +34,20 @@ public class CharacterSelectionMenu : MonoBehaviour {
         players.ForEach(player => player.SetActive(false));
         swapButton.SetActive(false);
         playButton.SetActive(false);
+        LocaleManager.instance.SetMenuLocalization(this);
     }
 
     public void OnEnable() {
-        title.text = "Waiting for both players...";
+        title.text = Localize("Waiting for both players...");
         if (isSwapped) {
             SwapPortraits();
         }
         Start();
+        LocaleManager.instance.SetMenuLocalization(this);
+    }
+
+    public void OnDisable() {
+        LocaleManager.instance.ResetMenuLocalization();
     }
 
     public void Update() {
@@ -58,7 +65,7 @@ public class CharacterSelectionMenu : MonoBehaviour {
             players[1].GetComponentInChildren<Image>().sprite = GetControllerIcon(CharacterName.Anna);
             players[1].SetActive(true);
 
-            title.text = "Character Selection";
+            title.text = Localize("Character Selection");
 
             swapButton.SetActive(true);
             playButton.SetActive(true);

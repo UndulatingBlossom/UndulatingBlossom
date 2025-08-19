@@ -15,10 +15,16 @@ public class AudioMenu : MonoBehaviour {
 
     public void Start() {
         musicSlider.Select();
+        LocaleManager.instance.SetMenuLocalization(this);
     }
 
     public void OnEnable() {
         musicSlider.Select();
+        LocaleManager.instance.SetMenuLocalization(this);
+    }
+
+    public void OnDisable() {
+        LocaleManager.instance.ResetMenuLocalization();
     }
 
     public void SetMusicVolume() {

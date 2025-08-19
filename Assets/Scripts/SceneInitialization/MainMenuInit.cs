@@ -4,14 +4,18 @@ public class MainMenuInit : MonoBehaviour {
 
     // Assign in Inspector
     public GameObject audioManagerPrefab;
-    public GameObject menuManagerPrefab;
     public GameObject playerManagerPrefab;
+    public GameObject localeManagerPrefab;
+    public GameObject menuManagerPrefab;
     //
 
     public void Start() {
         // Debug.Log("Main Menu Initializer: Start");
 
         // Ensure that all manager singletons are available
+        if (LocaleManager.instance == null) {
+            Instantiate(localeManagerPrefab);
+        }
         if (AudioManager.instance == null) {
             Instantiate(audioManagerPrefab);
         }

@@ -21,13 +21,22 @@ public class ControlsMenu : MonoBehaviour {
 
     public void Start() {
         // Debug.Log("ControlsMenu: Start");
-        ShowLayout(currentLayout);
-        selectedButton.Select();
+        ActivateMenu();
     }
 
     public void OnEnable() {
         // Debug.Log("ControlsMenu: Enable");
-        Start();
+        ActivateMenu();
+    }
+
+    private void ActivateMenu() {
+        ShowLayout(currentLayout);
+        selectedButton.Select();
+        LocaleManager.instance.SetMenuLocalization(this);
+    }
+
+    private void OnDisable() {
+        LocaleManager.instance.ResetMenuLocalization();
     }
 
     private void ShowLayout(Layout layout) {
@@ -91,7 +100,7 @@ public class ControlsMenu : MonoBehaviour {
         // valid indices are 0-94
         Dictionary<string, int[]> keyboardLayoutLeft = new() {
             {"Move", new int[] {90, 13, 79, 29}},
-            {"Move (Alt)", new int[] {16, 17, 18, 15}},
+            {"Move (Alt.)", new int[] {16, 17, 18, 15}},
             {"Jump", new int[] {84}},
             {"Dash", new int[] {82, 37}},
             {"Interact", new int[] {31}},
@@ -114,7 +123,7 @@ public class ControlsMenu : MonoBehaviour {
     private string GetKeyboardSpriteString(Dictionary<string, int[]> layout) {
         string text = "";
         foreach (var kvp in layout) {
-            text += $"<size={textScale}%>{kvp.Key}:</size>\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"; // space
+            text += $"<size={textScale}%>{LocaleManager.instance.Localize(kvp.Key)}:</size>\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"; // space
             foreach (int actionIndex in kvp.Value) {
                 text += $"<voffset={iconVOffset}><size={iconScale}%><sprite=\"Keyboard Full\", index={actionIndex}></size></voffset> ";
             }

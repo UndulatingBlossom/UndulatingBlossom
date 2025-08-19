@@ -43,8 +43,8 @@ public class GoldenMushroom : MonoBehaviour {
         // spawn zero death shrooms
         foreach (GameObject mushroom in goldenMushroomsZeroDeaths) {
             CharacterName character = mushroom.CompareTag("Felix") ? CharacterName.Felix : CharacterName.Anna;
-            Debug.Log(LevelManager.instance.deathCounts[character].ToString());
-            Debug.Log(LevelManager.instance.deathCounts[character]);
+            // Debug.Log(LevelManager.instance.deathCounts[character].ToString());
+            // Debug.Log(LevelManager.instance.deathCounts[character]);
             mushroom.GetComponentInChildren<InputPrompt>().suffix = LevelManager.instance.deathCounts[character].ToString();
             if (LevelManager.instance.deathCounts[character] == 0) {
                 SpawnUnlocked(mushroom);

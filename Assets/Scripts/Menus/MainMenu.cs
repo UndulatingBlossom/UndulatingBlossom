@@ -27,6 +27,13 @@ public class MainMenu : MonoBehaviour {
         backgrounds[currentBackground].SetActive(false);
         currentBackground = random.Next(backgrounds.Length);
         backgrounds[currentBackground].SetActive(true);
+
+        // Localize all buttons in the menu
+        LocaleManager.instance.SetMenuLocalization(this);
+    }
+
+    public void OnDisable() {
+        LocaleManager.instance.ResetMenuLocalization();
     }
 
     public void Play() {

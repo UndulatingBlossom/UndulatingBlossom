@@ -1,4 +1,3 @@
-using System.Drawing;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,6 +18,7 @@ public class CreditsMenu : MonoBehaviour {
 
     private void Awake() {
         canvas = MenuManager.instance.canvas.GetComponent<RectTransform>();
+        LocaleManager.instance.SetMenuLocalization(this);
     }
 
     public void OnEnable() {

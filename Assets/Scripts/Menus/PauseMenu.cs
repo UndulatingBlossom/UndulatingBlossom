@@ -32,6 +32,11 @@ public class PauseMenu : MonoBehaviour {
         deathCountAnna.text = LevelManager.instance.deathCounts[CharacterName.Anna].ToString();
         LayoutRebuilder.ForceRebuildLayoutImmediate(mushroomStatsContainer);
         LayoutRebuilder.ForceRebuildLayoutImmediate(mushroomStatsContainer);
+        LocaleManager.instance.SetMenuLocalization(this);
+    }
+
+    private void OnDisable() {
+        LocaleManager.instance.ResetMenuLocalization();
     }
 
     private Color DeathCountColor(CharacterName character) {

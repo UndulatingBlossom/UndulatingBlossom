@@ -121,6 +121,7 @@ public class Room : MonoBehaviour, IResettable {
         DeactivateBlocks();
         LevelManager.instance.SetCurrentRoom(this);
         LevelManager.instance.globalLight.intensity = isCave ? 0.3f : 1f;
+        if (room.gameObject.name == "FinalRoom") LocaleManager.instance.SetMenuLocalization(this);
     }
 
     private IEnumerator InitializeOversizedRoom() {
@@ -139,6 +140,7 @@ public class Room : MonoBehaviour, IResettable {
         // Debug.Log("Deactivate Camera");
         cam.SetActive(false);
         RemoveExitArrow();
+        if (room.gameObject.name == "FinalRoom") LocaleManager.instance.ResetMenuLocalization();
     }
 
     private bool IsFullyInside(Collider2D other) {

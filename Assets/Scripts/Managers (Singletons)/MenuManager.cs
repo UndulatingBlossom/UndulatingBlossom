@@ -73,7 +73,7 @@ public class MenuManager : MonoBehaviour {
 
         foreach (var menu in menus) {
             if (menu.Value.activeSelf) {
-                Debug.Log("Save menu prefabs as inactive: " + menu.Key);
+                Debug.LogWarning("Save menu prefabs as inactive: " + menu.Key);
                 menu.Value.SetActive(false);
             }
         }
