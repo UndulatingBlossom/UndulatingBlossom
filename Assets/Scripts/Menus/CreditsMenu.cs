@@ -32,6 +32,11 @@ public class CreditsMenu : MonoBehaviour {
         targetPositionThanks = new Vector2(0, canvas.sizeDelta.y / 2);
 
         lastUpdate = Time.realtimeSinceStartup;
+        LocaleManager.instance.SetMenuLocalization(this);
+    }
+
+    public void OnDisable() {
+        LocaleManager.instance.ResetMenuLocalization();
     }
 
     private void Update() {
