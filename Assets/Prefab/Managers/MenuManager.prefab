@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasPrefab: {fileID: 8438184333435958005, guid: ff16eddd448e7588ea0c5fe49189e45f, type: 3}
-  eventSystemPrefab: {fileID: 307167035591985347, guid: 469ae7f5f0d59724f93e8b0fe30b4d6e, type: 3}
+  eventSystemPrefab: {fileID: -9068798604730183725, guid: 469ae7f5f0d59724f93e8b0fe30b4d6e, type: 3}
   mainMenuPrefab: {fileID: 886658329797751419, guid: 8832a80f96410761a80ed22fa58f741b, type: 3}
   settingsMenuPrefab: {fileID: 4328172465318805477, guid: 362ae0376a21bfba9a57160b4c68c856, type: 3}
   pauseMenuPrefab: {fileID: 7611874237471420676, guid: 7ba0276963cbcc5929a3ebf48c4b18e9, type: 3}
@@ -61,3 +61,4 @@ MonoBehaviour:
   menuConfirmSound: {fileID: 8300000, guid: cc6ec3ef24bfd17398dc0be3cce696f7, type: 3}
   menuCancelSound: {fileID: 8300000, guid: b6dea766d0dc56ebd8587060f049c223, type: 3}
   menuErrorSound: {fileID: 8300000, guid: 85cc6049e3f6c01f7be700df5ab74353, type: 3}
+  gameSpeed: 1
