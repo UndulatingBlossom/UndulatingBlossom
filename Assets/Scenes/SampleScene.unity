@@ -16389,11 +16389,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2765633551094998286, guid: 2e82e90fdcdbb337abd0baefefbc739e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 261.94
+      value: 109.6
       objectReference: {fileID: 0}
     - target: {fileID: 2765633551094998286, guid: 2e82e90fdcdbb337abd0baefefbc739e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.24
+      value: 7.3
       objectReference: {fileID: 0}
     - target: {fileID: 2765633551094998286, guid: 2e82e90fdcdbb337abd0baefefbc739e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -80285,9 +80285,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glow: {fileID: 687772632}
-  adjustedColor: {r: 0, g: 0, b: 0, a: 1}
+  adjustedColor: {r: 0.6117647, g: 0.27450982, b: 0, a: 1}
   fadeTime: 2
-  shrine: {fileID: 1986806752}
+  shrine: {fileID: 1051550994}
 --- !u!114 &687772632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80304,12 +80304,12 @@ MonoBehaviour:
   m_LightType: 2
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.6117647, g: 0.27450982, b: 0, a: 1}
-  m_Intensity: 4
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 10
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000dff2dee3631aab648f9952de4b2341b379d9986d037c4701
-  m_LightCookieSprite: {fileID: 21300000, guid: e830b4195c79483bea8d70b9513ca641, type: 3}
+  m_ApplyToSortingLayers: 00000000dff2dee3631aab648f9952de4b2341b379d9986d037c4701cbfd77e8
+  m_LightCookieSprite: {fileID: -841622003880348084, guid: 4d29d8db2847678eeb9a5b2902e73323, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
   m_AlphaBlendOnOverlap: 0
@@ -80325,7 +80325,7 @@ MonoBehaviour:
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 2, y: 2, z: 0}
+    m_Extent: {x: 1.875, y: 1.96875, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -116926,10 +116926,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ComponentVersion: 2
   m_LightType: 3
-  m_BlendStyleIndex: 0
+  m_BlendStyleIndex: 1
   m_FalloffIntensity: 0.85
-  m_Color: {r: 0.25882354, g: 1, b: 0.8352941, a: 1}
-  m_Intensity: 80
+  m_Color: {r: 1, g: 0.25882354, b: 0.7764706, a: 1}
+  m_Intensity: 2
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000dff2dee3631aab648f9952de4b2341b379d9986d037c4701cbfd77e8
